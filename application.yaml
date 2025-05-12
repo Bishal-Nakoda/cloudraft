@@ -12,9 +12,6 @@ spec:
       helm:
         valueFiles:
           - values.yaml
-    - repoURL: https://github.com/Bishal-Nakoda/cloudraft.git
-      targetRevision: HEAD
-      path: manifests
   destination:
     server: "https://kubernetes.default.svc"
     namespace: metrics-app
