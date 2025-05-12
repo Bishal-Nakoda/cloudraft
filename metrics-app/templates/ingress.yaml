@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "metrics-app.name" . }}-ing
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /counter
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ include "metrics-app.name" . }}-svc
+                port:
+                  number: 8080
+
