@@ -10,8 +10,8 @@ spec:
     - host: localhost
       http:
         paths:
-          - path: /counter
-            pathType: Prefix
+          - path: /*
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: {{ include "metrics-app.name" . }}-svc
